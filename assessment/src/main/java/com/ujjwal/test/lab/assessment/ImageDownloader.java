@@ -71,6 +71,10 @@ public class ImageDownloader {
 				destinationFile=System.getProperty("user.dir");
 			}
 			imageFileName = imageTypeST[2];
+			
+			if (imageFileName.contains("?")) {
+				imageFileName = imageFileName.substring(0, imageFileName.indexOf("?"));
+			}
 
 			// *Code to download the image where the URL is appended with the absolute image
 			// name*//
@@ -108,7 +112,7 @@ public class ImageDownloader {
 					img = doc.getElementsByTag("img");
 
 				}
-				String destinationFolderName = destinationFile + "\\" + imageFileName;
+				String destinationFolderName = destinationFile + "//" + imageFileName;
 				File file = new File(destinationFolderName);
 				if (!file.exists()) {
 					if (file.mkdir()) {
@@ -200,7 +204,7 @@ public class ImageDownloader {
 			if (name.contains("?")) {
 				name = name.substring(0, name.indexOf("?"));
 			}
-			destinationFolderName = destinationFolderName + "\\" + name;
+			destinationFolderName = destinationFolderName + "//" + name;
 			URL url = new URL(absoluteURL);
 			InputStream is = url.openStream();
 			System.out.println("#== Imaged download Starting for subURL " + absoluteURL + " ==#");
