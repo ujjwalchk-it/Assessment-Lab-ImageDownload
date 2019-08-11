@@ -1,8 +1,6 @@
 package com.ujjwal.test.lab.assessment;
 
 import static org.junit.Assert.*;
-
-import java.util.Hashtable;
 import java.util.LinkedHashMap;
 
 import org.junit.Test;
