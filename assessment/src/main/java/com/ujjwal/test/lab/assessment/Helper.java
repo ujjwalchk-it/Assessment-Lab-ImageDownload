@@ -1,5 +1,5 @@
 /**@author Ujjwal Chakraborty : ujjwalchk@yahoo.co.in 
- * @Date 04/08/2019 , Bangalore
+ * @Date 11/08/2019 , Bangalore
  */
 package com.ujjwal.test.lab.assessment;
 
@@ -15,33 +15,49 @@ import java.util.LinkedHashMap;
 /**
  * 
  * 
- * This class work as a helper to provide the required formatted data to the
- * Executor class. It's 'readURLFromFile' method takes single inputs
+ * This class work as a helper to provide the required formatted data to the Executor class.
+ *  
+ * <About method readURLFromFile(String,String)>
+ * 
+ * It's 'readURLFromFile' method takes two inputs -
  * (1)Plain-text file name with Absolute path.
+ * (2)Destination Directory where the image to be saved.
+ * This method returns a HashMap which contains the key/value pair of each of the URLs provided in the plain text file.
+ * Key: TypeOftheURL+Delimiter+DownloadDir+Delimiter+ImageFileName
+ * Value : Actual URL/Redirected URL
+ * Eg: ImageURL#~~#src/test/java/resources#~~#urlNo1_googlelogo_color_272x92dp.png",
+ *    "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
  * 
- * The second method 'extensionChecker' is an internal private method used to
- * validate the extension of the image-file. It's also uses the
- * customExceptionClass 'InvalidExtentionException Class' to generate error
- * incase the image extension regex match fails.
+ * TypeOftheURL : If the URL contains the image address then considered as 'ImageURL' , 
+ * if the URL contains full Website address then considered as 'WebsiteURL'
  * 
- * This class reads the lines of the plain text file and takes care of below
- * actions - 1. Generate the image file name to be saved as 2. Check the
- * Extension of image file with Regex 3. Finally populate the key(Target Image
- * file name) & value (Source URL) into Hashtable and returns to the executor
- * class
+ * Delimiter : Unique hard-coded String '#~~#' has been used to delimit between different values.
  * 
- * "Helper Class" returns a Hashtable with "Key" as target image file name &
- * value as source URL (eg. below) eg: for a URL
- * https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
- * , below are key/value pair key : url_1_googlelogo_color_272x92dp.png value :
- * https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
- * Please note that the second parameter of the key : "_1_" , it is the line
- * number of the particular URL in the plain text. It has been kept to avoid
- * image over-riding & easily find-out the image when we have a big list.
+ * DownloadDir : Directory name where the images would be stored , based on the user input. If the value found NULL the local working directory
+ * would be used.
  * 
- * Any other exception during execution of above tasks , would be caught by the
- * general Exception Class.
+ * ImageFileName : Name of the image fileName. In case if the URLType as 'WebsiteURL' , then only the folder name would be sent as DownloadDir.
+ * The imageFileName would be considered based on the doc alignment using JSoup library (implemented in ImageDownloader Class).
+ * Image file name would be appended with 'urlNo' to ensure we uniquely identify the image.
+ * 
+ * Actual URL/Redirected URL : This is the value of the hashmap entry, if the URL is not found as Redirected URL then the supplied URL would be
+ * kept as Actual URL , else Redirected URL would be populated.
+ * 
+ * 
+ * <About method getFinalURL(String)>
+ * 
+ * The second method 'getFinalURL' is an internal private method used to validate if the URL is redirected.
+ * It takes URL as input and returns the final URL(Actual/Redirected) one.
+ * It uses a recursive mechanism to check if the URL is redirected to different one based on the Http-Response-Code.
+ * It also ensure if the URL is invalid it remove from the list and won't be considered part of the final hashmap.
+ * 
+ * <About method urlChecker(String)>
+ * 
+ * The third method 'urlChecker' is an internal private method used to check if the URL type of 'ImageURL' or 'WebURL'.
+ * If the he URL contains the image address then considered as 'ImageURL' , 
+ * if the URL contains full Website address then considered as 'WebURL'
  *
+ * Every class has its exception handling implemented apart from normal exception , would be caught by the general Exception Class.
  */
 
 public class Helper {
