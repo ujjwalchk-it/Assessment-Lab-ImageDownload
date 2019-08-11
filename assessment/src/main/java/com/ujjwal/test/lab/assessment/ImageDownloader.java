@@ -1,5 +1,5 @@
 /**@author Ujjwal Chakraborty : ujjwalchk@yahoo.co.in 
- * @Date 04/08/2019 , Bangalore
+ * @Date 11/08/2019 , Bangalore
  */
 package com.ujjwal.test.lab.assessment;
 
@@ -20,8 +20,16 @@ import org.jsoup.select.Elements;
  * 
  * 
  * This class is use to download the image from the URL specified. It's
- * 'downloadImage' method takes two inputs (1)Source URL (2)Destination File
- * location with image-name.
+ * 'downloadImage' method takes two inputs (1)imageTypeDetails (2)URL
+ * 
+ * eg:
+ * imageTypeDetails :
+ * ImageURL#~~#src/test/java/resources#~~#urlNo1_googlelogo_color_272x92dp.png",
+ * URL :			
+ * "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+ * 
+ * From imageTypeDetails the method strip-off the values using delimiter '#~~#' and
+ * call the URL based on the values received from the imageTypeDetails.
  * 
  * It's read the data/image using the inPutStream and write to disk using
  * outPutStream, java.io package. To Read the data from the inputStream it uses
@@ -34,6 +42,9 @@ import org.jsoup.select.Elements;
  * CPU cache size/latency. We should configure the buffer size power of 2
  * ,at-least equal/double than a file system block size to avoid any wasted
  * reads.
+ * 
+ * if the UrlType is 'WebsiteURL' then it get the docElement using JSoup API.
+ * For each of the doc elements it gets the subURL and download the image into the folder created with URLLineNo.
  * 
  * If there are any errors due to connection/downloading/writing to destination
  * file the general- -catch block would capture the exception and print the
@@ -191,7 +202,7 @@ public class ImageDownloader {
 
 	}
 
-	synchronized private static void getImages(String absoluteURL, String destinationFolderName) throws IOException {
+	synchronized private void getImages(String absoluteURL, String destinationFolderName) throws IOException {
 
 		try {
 			int indexname = absoluteURL.lastIndexOf("/");

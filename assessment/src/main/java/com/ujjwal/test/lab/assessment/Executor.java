@@ -1,5 +1,5 @@
 /**@author Ujjwal Chakraborty : ujjwalchk@yahoo.co.in 
- * @Date 04/08/2019 , Bangalore
+ * @Date 11/08/2019 , Bangalore
  */
 package com.ujjwal.test.lab.assessment;
 
@@ -18,23 +18,17 @@ import java.util.Scanner;
  * the URLs (2)Destination File location where the images would be saved
  * 
  * First it invoke the "Helper Class" with the first input(i.e Absolute plain
- * text path containing image URLs) "Helper Class" returns a Hashtable with
- * "Key" as target image file name & value as source URL (eg. below) eg: for a
- * URL
+ * text path containing image URLs) "Helper Class" returns a HashMap with
+ * "Key" as imageTypeDetails & value as source URL (eg. below) 
+ * eg: for a URL
  * https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
- * , below are key/value pair key : url_1_googlelogo_color_272x92dp.png value :
- * https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
- * Please note that the second parameter of the key : "_1_" , it is the line
- * number of the particular URL in the plain text. It has been kept to avoid
- * image over-riding & easily find-out the image when we have a big list.
+ * , below are key/value pair 
+ * key : ImageURL#~~#src/test/java/resources#~~#urlNo1_googlelogo_color_272x92dp.png
+ * value : https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
  * 
  * The second invocation is for the actual downloader class ,"ImageDownloader
- * Class" , based on the hashtable list , it calls the downloader class. The
- * arguments being passed (1)Source URL (2)Destination File location with
- * image-name. For the Second argument , this class append the User Prompted
- * input (destination file location) along with the image file name , to ensure
- * its entirely on the user where they want to store the downloaded images.
- * Further Download action being carried out by the ImageDownloader Class.
+ * Class" , based on the hashmap entry , it calls the downloader class. The
+ * arguments being passed (1)imageTypeDetails (2)URL. 
  * 
  * Any exception during execution of above tasks , would be caught by the
  * Exception blocks.
