@@ -13,9 +13,13 @@ The code has 3 classes -
    2. Maven (latest version recommended 3.6.X)
    
 About running the program -
+
   git clone https://github.com/ujjwalchk-it/Assessment-Lab-ImageDownload.git
+  
   cd Assessment-Lab-ImageDownload/assessment
+  
   mvn clean install
+  
   java -jar target/assessment-0.0.1-SNAPSHOT-jar-with-dependencies.jar 
   
 The project has to be built/complied using maven. While running 'mvn clean install' the integrated Junit test would be executed, if the test fails then inspect the error logs and take appropriate actions. 
