@@ -47,10 +47,10 @@ The code has been tested in both Windows (10) & Linux env.
 
 Please make sure the url file you are providing having proper access from the user you are running the code and same goes for the download directory (RD/WR permission should be there).
 
-Sample url-list file that contains the list of URLs
+Sample url-list file that contains the list of URLs . Alternatively you can download the attached url-list.txt file provided here.
 (PLEASE PROVIDE ONE URL IN EACH LINE , AVOID UNNECESSARY LINEBREAKS IN BETWEEN)
 
-Refer the url-list.txt file provided here.
+
 
 https://cricket.yahoo.net/
 
