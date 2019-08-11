@@ -51,12 +51,19 @@ Sample url-list file that contains the list of URLs
 (PLEASE PROVIDE ONE URL IN ONE LINE)
 
 https://cricket.yahoo.net/
+
 https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+
 https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+
 https://i.imgur.com/DfQqM.gif
+
 https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+
 https://homepages.cae.wisc.edu/~ece533/images/cameraman.tif
+
 http://mywebserver.com/images/24174.jpg
+
 http://somewebsrv.com/img/992147.jpg
 
 It would be always good to have some definitive diectory name where the images to be saved.
