@@ -181,7 +181,7 @@ public class Helper {
 
 	}
 
-	private static String getFinalURL(String url) {
+	private String getFinalURL(String url) {
 		HttpURLConnection httpConn = null;
 		try {
 			httpConn = (HttpURLConnection) new URL(url).openConnection();
