@@ -6,7 +6,7 @@ The code has 3 classes -
   2.ImageDownloader.java
   3.Executor.java
   
- As the name suggests, Helper Class is the internal helper method with supplies the required formatted details to the ImageDownloader Class.ImageDownloader Class is use to download the actual images from ImageURL/Website URL. Executor class is the main class which wires the inputs/connection between the Helper  & ImageDownloader Class.
+ As the name suggests, Helper Class is the internal helper class which supplies the required formatted details to the ImageDownloader Class.ImageDownloader Class is mainly to download the actual images from ImageURL/Website URL. Executor class is the class with main method which wires the connection between the Helper  & ImageDownloader Class.
  
  Pre-Requisites -
    1. Java 1.7 or above.
