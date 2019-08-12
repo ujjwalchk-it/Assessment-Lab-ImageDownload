@@ -1,16 +1,14 @@
-
+/**@author Ujjwal Chakraborty : ujjwalchk@yahoo.co.in 
+ * @Date 11/08/2019 , Bangalore
+ */
 
 package com.ujjwal.test.lab.assessment;
 
 import static org.junit.Assert.*;
-
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.File;
 import java.io.FileOutputStream;
-/**@author Ujjwal Chakraborty : ujjwalchk@yahoo.co.in 
- * @Date 11/08/2019 , Bangalore
- */
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -20,8 +18,7 @@ import org.junit.Test;
 
 /**
  * 
- * 
- * This class is having different Junit testcases for the ImageDownloader Class
+ * This class is having different Junit testcases for the ImageDownloader Class.
  * 
  */
 
