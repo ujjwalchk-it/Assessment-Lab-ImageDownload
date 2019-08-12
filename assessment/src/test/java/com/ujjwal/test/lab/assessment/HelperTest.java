@@ -1,9 +1,20 @@
+/**@author Ujjwal Chakraborty : ujjwalchk@yahoo.co.in 
+ * @Date 11/08/2019 , Bangalore
+ */
+
 package com.ujjwal.test.lab.assessment;
 
 import static org.junit.Assert.*;
 import java.util.LinkedHashMap;
 
 import org.junit.Test;
+
+/**
+ * 
+ * 
+ * This class is consist of different Junit test cases the different methods of the Helper Class.
+ * 
+ */
 
 public class HelperTest {
 
